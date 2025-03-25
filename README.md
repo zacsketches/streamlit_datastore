@@ -9,6 +9,10 @@ Then if that looks good follow up with
 ```
 terraform apply -auto-approve
 ```
+Log into the new machine by ssh'ing into the output IP address with
+```
+ssh -i my-key-pair.pem ec2-user@<public-ip>
+```
 Then check to make sure that the test SQLite DB is in place by running
 ```
 ls /mnt/sqlite-data
