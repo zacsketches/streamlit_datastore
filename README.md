@@ -25,7 +25,7 @@ Even better the EC2 instance now has a Flask API to get the users RESTfully
 ```
 curl http://<EC2_PUBLIC_IP>:5000/users
 ```
-And it has a POST endpoint to add a user. Use the POST like this which is looking for an environment variable called `EC2_IP`
+And it has a POST endpoint to add a user. Use the POST like this which is looking for an environment variable called `EC2_IP`. The `create.sh` file in this repo executes this addition to the database via a much easier to use shell script.
 ```
 curl -X POST "http://${EC2_IP:-127.0.0.1}:5000/create" \
      -H "Content-Type: application/json" \
