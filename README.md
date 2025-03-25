@@ -21,6 +21,10 @@ And verify that three users were inserted into the DB by the user_data script wi
 ```
 sqlite3 /mnt/sqlite-data/my_database.db "SELECT * FROM users;"
 ```
+Even better the EC2 instance now has a Flask API to get the users RESTfully
+```
+curl http://<EC2_PUBLIC_IP>:5000/users
+```
 ## Then destroy the infrastructure to conserve resources for a test VM
 ```
 terraform destroy
