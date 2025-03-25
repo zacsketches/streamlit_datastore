@@ -21,6 +21,10 @@ And verify that three users were inserted into the DB by the user_data script wi
 ```
 sqlite3 /mnt/sqlite-data/my_database.db "SELECT * FROM users;"
 ```
+## Then destroy the infrastructure to conserve resources for a test VM
+```
+terraform destroy
+```
 ---
 If you need to generate teh key-pair then use this awscli command
 ```
