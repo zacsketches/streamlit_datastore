@@ -31,7 +31,7 @@ resource "aws_instance" "sqlite_ec2" {
 
 resource "aws_ebs_volume" "sqlite_ebs" {
   availability_zone = "us-east-1a"  # Ensure this matches your instance's AZ
-  size              = 5  # 5GB EBS volume
+  size              = 2  # 2GB EBS volume for our super small db
   tags = {
     Name = "sqlite-ebs-volume"
   }
@@ -45,7 +45,7 @@ resource "aws_volume_attachment" "ebs_attach" {
 
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
-  description = "Allow SSH inbound traffic"
+  description = "Allow SSH and Flask inbound traffic"
 
   ingress {
     from_port   = 22
