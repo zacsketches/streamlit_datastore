@@ -25,6 +25,12 @@ Even better the EC2 instance now has a Flask API to get the users RESTfully
 ```
 curl http://<EC2_PUBLIC_IP>:5000/users
 ```
+And it has a POST endpoint to add a user. Use the POST like this
+```
+curl -X POST http://<EC2_PUBLIC_IP>:5000/create \
+     -H "Content-Type: application/json" \
+     -d '{"name": "David"}'
+```
 ## Then destroy the infrastructure to conserve resources for a test VM
 ```
 terraform destroy
