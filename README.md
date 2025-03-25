@@ -17,3 +17,17 @@ And verify that three users were inserted into the DB by the user_data script wi
 ```
 sqlite3 /mnt/sqlite-data/my_database.db "SELECT * FROM users;"
 ```
+---
+If you need to generate teh key-pair then use this awscli command
+```
+aws ec2 create-key-pair --key-name my-key-pair --query "KeyMaterial" --output text > my-key-pair.pem
+```
+Then set the corret permissions on the key-pair with
+```
+chmod 400 my-key-pair.pem
+```
+The aws cli commands will only run after you have run 
+```
+aws configure
+```
+This configuration will require the AWS `access key id` and the `secret key id` that are generated in the AWS console.
