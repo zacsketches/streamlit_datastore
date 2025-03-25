@@ -1,6 +1,9 @@
 # Local .terraform directories
 **/.terraform/*
 
+# Ignore the local keypair file
+my-key-pair.*
+
 # .tfstate files
 *.tfstate
 *.tfstate.*
