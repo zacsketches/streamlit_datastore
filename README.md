@@ -1,7 +1,7 @@
 # streamlit_datastore
 This is the IaC to deploy an AWS free tier data store for my streamlit exploration
 
-To use this file log into the local directory where it is cloned and run
+To use this file log into the local directory where it is cloned, verify that there is an AWS key-pair named `my-key-pair` and run
 ```
 terraform plan
 ```
